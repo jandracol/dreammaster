@@ -2,6 +2,8 @@ import "./index.css";
 import SparklesAnimation from "./components/SparklesAnimation";
 import ImageCarousel from "./components/ImageCarousel";
 // import ThreeDSection from "./components/ThreeDSection";
+import ShowsCountries from "./components/ShowsCountries";
+import FadeInSection from "./components/FadeInSection";
 
 function App() {
   return (
@@ -58,94 +60,114 @@ function App() {
           </div>
         </div>
       </section>
-      {/* Carousel section  */}
-      <section id="carousel">
-        <div>
-          <ImageCarousel />
-        </div>
-      </section>
 
-      <section id="feature">
-        {/* Feature Container  */}
-        <div className="relative container flex flex-col max-w-6xl mx-auto my-16 px-6 text-gray-900 md:flex-row md:px-0">
-          {/* image  */}
-          <img
-            src="./images/desktop/Woman-catalogo_731x500.png"
-            alt=""
-            className="feature-img-size"
-          />
-          {/* Text container  */}
-          <div className="top-48 bg-gray-100 md:absolute md:right-2 md:py-20 md:pl-8">
-            <h2 className="max-w-lg mt-10 mb-6 font-kodchasan text-4xl text-center text-gray-900 md:text-3xl md:mt-0 md:text-left">
-              Dream Master Entertainment
-            </h2>
-            <p className="max-w-md ml-8 md:ml-2 text-left font-kodchasan font-thin pr-6 pl-2">
-              For Dream Master, dreaming is an integral part of our philosophy:
-              To take the adventure further, push our dreams further, and, above
-              all, believe that our people are the engine of our enterprise.
-              <br /> At Dream Master, we offer our artists and creators the
-              freedom they need to imagine their most incredible dreams and
-              bring them to life. <br />
-              At the core of the creative energy of Dream Master shows are
-              athletes, acrobats and artists at the pinnacle of their art. These
-              women and men are driven by a passion to continually surpass
-              themselves. <br />
-              Each artist is an integral part of the originality of Dream Master
-              productions, and everyone’s contribution is essential to the
-              success of the cast.
-            </p>
+      {/* Carousel section  */}
+      <FadeInSection>
+        <section id="carousel">
+          <div>
+            <ImageCarousel />
           </div>
-        </div>
-      </section>
-      <section id="references">
-        <div className="flex flex-col items-center justify-between max-w-6xl px-10 mx-auto space-y-16 my-20 md:space-y-0 md:py-32 md:mb-0">
-          <div className="flex flex-row">
-            <h3 className="uppercase text-3xl">Our Clients</h3>
+        </section>
+      </FadeInSection>
+      <FadeInSection>
+        {/* FEATURE SECTION  */}
+        <section id="feature">
+          {/* Feature Container  */}
+          <div className="relative container flex flex-col max-w-6xl mx-auto my-16 px-6 text-gray-900 md:flex-row md:px-0">
+            {/* image  */}
+            <img
+              src="./images/desktop/Woman-catalogo_731x500.png"
+              alt=""
+              className="feature-img-size"
+            />
+            {/* Text container  */}
+            <div className="top-48 bg-gray-100 md:absolute md:right-2 md:py-20 md:pl-8">
+              <h2 className="max-w-lg mt-10 mb-6 font-kodchasan text-2xl text-center text-gray-900 md:text-3xl md:mt-0 md:text-left">
+                Dream Master Entertainment
+              </h2>
+              <p className="max-w-md ml-8 md:ml-2 text-left font-kodchasan font-thin pr-6 pl-2">
+                For Dream Master, dreaming is an integral part of our
+                philosophy: To take the adventure further, push our dreams
+                further, and, above all, believe that our people are the engine
+                of our enterprise.
+                <br /> At Dream Master, we offer our artists and creators the
+                freedom they need to imagine their most incredible dreams and
+                bring them to life. <br />
+                At the core of the creative energy of Dream Master shows are
+                athletes, acrobats and artists at the pinnacle of their art.
+                These women and men are driven by a passion to continually
+                surpass themselves. <br />
+                Each artist is an integral part of the originality of Dream
+                Master productions, and everyone’s contribution is essential to
+                the success of the cast.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col md:flex-row md:py-20">
-            <img
-              src="./images/desktop/MOE.png"
-              alt=""
-              className="client-logo-size"
-            />
-            <img
-              src="./images/desktop/Fairmont-Palm.png"
-              alt=""
-              className="client-logo-size"
-            />
-            <img
-              src="./images/desktop/DTCM.png"
-              alt=""
-              className="client-logo-size"
-            />
-            <img
-              src="./images/desktop/City_Walk.png"
-              alt=""
-              className="client-logo-size"
-            />
-            <img
-              src="./images/desktop/Meraas.png"
-              alt=""
-              className="client-logo-size"
-            />
-            <img
-              src="./images/desktop/MajidalFuttaim.png"
-              alt=""
-              className="client-logo-size"
-            />
-            <img
-              src="./images/desktop/Aldar.png"
-              alt=""
-              className="client-logo-size"
-            />
+        </section>
+      </FadeInSection>
+      {/* Shows and Countries Section  */}
+      <FadeInSection>
+        <section>
+          <div className="w-full mt-48">
+            {/* <div className="cover max-w-6xl mt-10 mx-auto px-6 py-1 space-y-16 my-20 md:space-y-0 md:py-32 md:mb-0"> */}
+            <ShowsCountries />
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInSection>
+
+      {/* Clients logo Section  */}
+      <FadeInSection>
+        <section id="references">
+          <div className="flex flex-col items-center justify-between max-w-6xl px-10 mx-auto space-y-16 my-0 md:space-y-0 md:py-32 md:mb-0">
+            <div className="flex flex-row">
+              <h3 className="uppercase text-3xl">Our Clients</h3>
+            </div>
+            <div className="flex flex-col md:flex-row md:py-20">
+              <img
+                src="./images/desktop/MOE.png"
+                alt=""
+                className="client-logo-size"
+              />
+              <img
+                src="./images/desktop/Fairmont-Palm.png"
+                alt=""
+                className="client-logo-size"
+              />
+              <img
+                src="./images/desktop/DTCM.png"
+                alt=""
+                className="client-logo-size"
+              />
+              <img
+                src="./images/desktop/City_Walk.png"
+                alt=""
+                className="client-logo-size"
+              />
+              <img
+                src="./images/desktop/Meraas.png"
+                alt=""
+                className="client-logo-size"
+              />
+              <img
+                src="./images/desktop/MajidalFuttaim.png"
+                alt=""
+                className="client-logo-size"
+              />
+              <img
+                src="./images/desktop/Aldar.png"
+                alt=""
+                className="client-logo-size"
+              />
+            </div>
+          </div>
+        </section>
+      </FadeInSection>
       {/* <section id="3dmodel">
         <div className="container">
           <ThreeDSection />
         </div>
       </section> */}
+      {/* FOOTER SECTION  */}
       <footer className="bg-gray-100">
         <div className="section-container">
           <div className="flex flex-col items-center justify-between md:flex-row">
