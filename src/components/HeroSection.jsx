@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import YouTube from "react-youtube";
 import PropTypes from "prop-types";
 
 const HeroSection = ({ autoplay = true }) => {
+  const [videoHeight, setVideoHeight] = useState("100vh");
+  const sectionRef = useRef(null);
+
   const videos = [
     { id: "4Rc1xR7HZLs", title: "Video 1" },
     { id: "3IBll6I05fs", title: "Video 2" },
@@ -21,8 +24,27 @@ const HeroSection = ({ autoplay = true }) => {
     },
   };
 
+  useEffect(() => {
+    const updateVideoHeight = () => {
+      if (sectionRef.current) {
+        const viewportHeight = window.innerHeight;
+        const sectionTop = sectionRef.current.getBoundingClientRect().top;
+        const newHeight = viewportHeight - sectionTop;
+        setVideoHeight(`${newHeight}px`);
+      }
+    };
+
+    updateVideoHeight();
+    window.addEventListener("resize", updateVideoHeight);
+    return () => window.removeEventListener("resize", updateVideoHeight);
+  }, []);
+
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative w-full overflow-hidden"
+      style={{ height: videoHeight }}
+    >
       <div className="absolute inset-0">
         <YouTube
           videoId={currentVideoId}
@@ -32,7 +54,7 @@ const HeroSection = ({ autoplay = true }) => {
         />
       </div>
 
-      <div className="absolute bottom-4 left-4 right-4 flex flex-wrap justify-center gap-2 sm:gap-4 md:bottom-8 md:left-8 md:right-8">
+      <div className="absolute bottom-4 left-4 right-4 flex flex-wrap justify-center gap-2 sm:gap-4">
         {videos.map((video) => (
           <button
             key={video.id}
@@ -45,7 +67,7 @@ const HeroSection = ({ autoplay = true }) => {
           </button>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
