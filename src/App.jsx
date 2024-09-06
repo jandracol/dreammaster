@@ -4,21 +4,23 @@ import ImageCarousel from "./components/ImageCarousel";
 // import ThreeDSection from "./components/ThreeDSection";
 import ShowsCountries from "./components/ShowsCountries";
 import FadeInSection from "./components/FadeInSection";
+import HeroSection from "./components/HeroSection";
 
 function App() {
   return (
     <>
-      {/* Hero section */}
-      <section id="hero" className="relative">
-        <SparklesAnimation />
-        {/*  Hero container  */}
-        <div className="container max-w-6xl mx-auto px-6 py-1">
-          {/* Menu / Logo container */}
-          <nav className="flex items-center justify-between text-black">
-            <img src="/images/logo-blanco.png" alt="" className="logo-size" />
+      <section>
+        <div className="App">
+          {/* From here new */}
+          <nav className="flex items-center justify-between text-black  bg-blue-900 py-2">
+            <img
+              src="/images/logo-blanco.png"
+              alt=""
+              className="ml-10 logo-size"
+            />
             {/* <img src="/images/logo.svg" alt="" /> */}
             {/* Menu  */}
-            <div className="hidden h-10 font-sansjosefin md:flex md:space-x-8">
+            <div className="hidden h-10 font-sansjosefin md:flex md:space-x-8 mr-10">
               <div className="group">
                 <a href="#" className="text-white">
                   Corporate
@@ -52,6 +54,60 @@ function App() {
             </div>
             {/* Todo Hamburger button */}
           </nav>
+
+          {/* Up to here new nav */}
+
+          <HeroSection autoplay={true} />
+          {/* or */}
+          {/* <HeroSection autoplay={false} /> */}
+          {/* or simply */}
+          {/* <HeroSection /> */}
+          {/* Other components */}
+        </div>
+      </section>
+      {/* Hero section - not really*/}
+      <section id="hero" className="relative">
+        <SparklesAnimation />
+        {/*  Hero container  */}
+        <div className="container max-w-6xl mx-auto px-6 py-1">
+          {/* Menu / Logo container */}
+          {/* <nav className="flex items-center justify-between text-black">
+            <img src="/images/logo-blanco.png" alt="" className="logo-size" />
+
+            <div className="hidden h-10 font-sansjosefin md:flex md:space-x-8">
+              <div className="group">
+                <a href="#" className="text-white">
+                  Corporate
+                </a>
+                <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+              </div>
+              <div className="group">
+                <a href="#" className="text-white">
+                  Festivals
+                </a>
+                <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+              </div>
+              <div className="group">
+                <a href="#" className="text-white">
+                  Productions
+                </a>
+                <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+              </div>
+              <div className="group">
+                <a href="#" className="text-white">
+                  Circus School
+                </a>
+                <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+              </div>
+              <div className="group">
+                <a href="#" className="text-white">
+                  Our Studio
+                </a>
+                <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+              </div>
+            </div>
+
+          </nav> */}
           {/* Todo Mobile Menu  */}
           <div className="flex ml-20 items-center md:justify-end h-screen">
             <div className="max-w-lg p-6 font-monserrat text-center text-base text-white uppercase border-2 md:p-10 md:text-4xl">
