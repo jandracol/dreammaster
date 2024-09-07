@@ -57,7 +57,7 @@ function App() {
 
           {/* Up to here new nav */}
 
-          <HeroSection autoplay={true} />
+          {/* <HeroSection autoplay={true} /> */}
           {/* or */}
           {/* <HeroSection autoplay={false} /> */}
           {/* or simply */}
@@ -65,6 +65,10 @@ function App() {
           {/* Other components */}
         </div>
       </section>
+      <section id="heroSection">
+        <HeroSection autoplay={true} />
+      </section>
+
       {/* Hero section - not really*/}
       <section id="hero" className="relative">
         <SparklesAnimation />
