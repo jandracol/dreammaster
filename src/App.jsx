@@ -65,9 +65,6 @@ function App() {
           {/* Other components */}
         </div>
       </section>
-      <section id="heroSection">
-        <HeroSection autoplay={true} />
-      </section>
 
       {/* Hero section - not really*/}
       <section id="hero" className="relative">
@@ -119,6 +116,10 @@ function App() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="heroSection">
+        <HeroSection autoplay={true} />
       </section>
 
       {/* Carousel section  */}

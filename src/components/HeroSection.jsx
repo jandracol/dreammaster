@@ -7,9 +7,9 @@ const HeroSection = ({ autoplay = true }) => {
   const sectionRef = useRef(null);
 
   const videos = [
-    { id: "4Rc1xR7HZLs", title: "Video 1" },
-    { id: "3IBll6I05fs", title: "Video 2" },
-    { id: "cJQRQiXQu2w", title: "Video 3" },
+    { id: "4Rc1xR7HZLs", title: "Mermaids" },
+    { id: "3IBll6I05fs", title: "Hand Stand" },
+    { id: "cJQRQiXQu2w", title: "Bubbles" },
   ];
 
   const [currentVideoId, setCurrentVideoId] = useState(videos[0].id);
@@ -30,7 +30,7 @@ const HeroSection = ({ autoplay = true }) => {
         const viewportHeight = window.innerHeight;
         const sectionTop = sectionRef.current.getBoundingClientRect().top;
         const newHeight = viewportHeight - sectionTop;
-        setVideoHeight(`${newHeight}px`);
+        setVideoHeight(`${newHeight}`);
       }
     };
 
