@@ -34,6 +34,33 @@ const Navigation = () => {
           </div>
           <div className="group">
             <Link
+              to="/productions"
+              className="text-white  hover:text-gray-300 transition-colors"
+            >
+              Productions
+            </Link>
+            <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+          </div>
+          <div className="group">
+            <Link
+              to="/ourstudio"
+              className="text-white  hover:text-gray-300 transition-colors"
+            >
+              Our Studio
+            </Link>
+            <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+          </div>
+          <div className="group">
+            <Link
+              to="/circusschool"
+              className="text-white  hover:text-gray-300 transition-colors"
+            >
+              Circus School
+            </Link>
+            <div className="mx-2 group-hover:border-b group-hover:border-blue-50"></div>
+          </div>
+          <div className="group">
+            <Link
               to="/contact"
               className="text-white  hover:text-gray-300 transition-colors"
             >
