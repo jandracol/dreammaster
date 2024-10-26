@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import YouTube from "react-youtube";
 import PropTypes from "prop-types";
 
 const HeroSection = ({ autoplay = true }) => {
-  const [videoHeight, setVideoHeight] = useState("100vh");
+  // const [videoHeight, setVideoHeight] = useState("auto");
   const sectionRef = useRef(null);
 
   const videos = [
@@ -26,12 +26,12 @@ const HeroSection = ({ autoplay = true }) => {
 
   useEffect(() => {
     const updateVideoHeight = () => {
-      if (sectionRef.current) {
-        const viewportHeight = window.innerHeight;
-        const sectionTop = sectionRef.current.getBoundingClientRect().top;
-        const newHeight = viewportHeight - sectionTop;
-        setVideoHeight(`${newHeight}`);
-      }
+      // if (sectionRef.current) {
+      // const width = sectionRef.current.offsetWidth;
+      // 16:9 aspect ratio
+      // const height = (width / 16) * 9;
+      // setVideoHeight(`${height}px`);
+      // }
     };
 
     updateVideoHeight();
@@ -40,17 +40,13 @@ const HeroSection = ({ autoplay = true }) => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full overflow-hidden"
-      style={{ height: videoHeight }}
-    >
-      <div className="absolute inset-0">
+    <section ref={sectionRef} className="relative w-full overflow-hidden">
+      <div style={{ paddingBottom: "56.25%" }} className="relative w-full">
         <YouTube
           videoId={currentVideoId}
           opts={opts}
-          className="w-full h-full"
-          iframeClassName="w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full"
+          iframeClassName="w-full h-full"
         />
       </div>
 
@@ -59,8 +55,8 @@ const HeroSection = ({ autoplay = true }) => {
           <button
             key={video.id}
             onClick={() => setCurrentVideoId(video.id)}
-            className={`px-3 py-1 text-xs sm:text-sm md:text-base bg-white bg-opacity-70 hover:bg-opacity-100 text-black rounded transition-all ${
-              currentVideoId === video.id ? "ring-2 ring-blue-500" : ""
+            className={`px-3 py-1 text-xs sm:text-sm md:text-base bg-white bg-opacity-70 hover:bg-opacity-100 text-blue rounded transition-all ${
+              currentVideoId === video.id ? "ring-2 ring-gray-500" : ""
             }`}
           >
             {video.title}

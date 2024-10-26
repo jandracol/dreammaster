@@ -4,7 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 const images = [
   "./images/desktop/xsmas_poster.jpg",
   "./images/desktop/flying_pearl.jpg",
-  "./images/desktop/golden_Land_poster.jpg",
+  // "./images/desktop/golden_Land_poster.jpg",
   "./images/desktop/dancing_air.jpg",
   "./images/desktop/alice_adventure.jpg",
   "./images/desktop/wrong_street.jpg",
@@ -33,7 +33,7 @@ const ImageCarousel = () => {
       >
         {images.map((image, index) => (
           <div key={index} className="w-1/4 flex-shrink-0">
-            <div className="aspect-w-16 aspect-h-9">
+            <div className="aspect-square">
               <img
                 src={image}
                 alt={`Carousel image ${index + 1}`}
